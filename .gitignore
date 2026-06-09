@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Datos sensibles
+*.csv
+*.xlsx
+*.xls
+data/raw/
+
+# OS
+.DS_Store
+Thumbs.db
