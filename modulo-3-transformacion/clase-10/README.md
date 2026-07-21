@@ -123,7 +123,7 @@ También puedes darle nombres descriptivos a cada métrica y aplicar funciones d
 
 ```python
 df.groupby("ciudad").agg(
-    total_ventas   = ("monto",    "sum"),
+    total_ventas   = ("monto", rea   "sum"),
     ticket_promedio= ("monto",    "mean"),
     unidades_total = ("unidades", "sum"),
     descuento_max  = ("descuento","max"),
