@@ -298,11 +298,11 @@ La superficie, en cambio, tiene una distribución más simétrica: la media y la
 
 Hay tres formas básicas que vas a encontrar todo el tiempo:
 
-**Distribución simétrica (forma de campana):** la media y la mediana son casi iguales. Los datos se concentran en el centro y se dispersan de forma pareja hacia los dos lados. Ejemplo típico: alturas de personas, errores de medición.
+- **Distribución simétrica (forma de campana):** la media y la mediana son casi iguales. Los datos se concentran en el centro y se dispersan de forma pareja hacia los dos lados. Ejemplo típico: alturas de personas, errores de medición.
 
-**Distribución sesgada a la derecha (cola derecha):** la media es mayor que la mediana. Hay muchos valores bajos y pocos valores muy altos que jalan el promedio hacia arriba. Ejemplo típico: salarios, precios de inmuebles, ingresos.
+- **Distribución sesgada a la derecha (cola derecha):** la media es mayor que la mediana. Hay muchos valores bajos y pocos valores muy altos que jalan el promedio hacia arriba. Ejemplo típico: salarios, precios de inmuebles, ingresos.
 
-**Distribución sesgada a la izquierda (cola izquierda):** la media es menor que la mediana. Aparece con menos frecuencia. Ejemplo típico: notas de un examen muy fácil, donde la mayoría saca calificaciones altas.
+- **Distribución sesgada a la izquierda (cola izquierda):** la media es menor que la mediana. Aparece con menos frecuencia. Ejemplo típico: notas de un examen muy fácil, donde la mayoría saca calificaciones altas.
 
 ---
 
