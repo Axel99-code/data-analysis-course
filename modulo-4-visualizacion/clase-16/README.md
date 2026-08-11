@@ -175,5 +175,27 @@ Predicciones
 ```
 
 Todo el trabajo realizado durante el preprocesamiento —tokenización, normalización, stopwords, lematización, Bag of Words y TF-IDF— tenía un objetivo concreto: transformar lenguaje humano en una representación numérica útil. El entrenamiento es el paso siguiente. Una vez que los documentos se convierten en números, los algoritmos de Machine Learning pueden aprender patrones sobre ellos y utilizar esos patrones para tomar decisiones sobre textos que nunca han visto antes.
-
+ 
+Vale la pena aclarar algo antes de cerrar. Todo lo que construimos en esta clase fue un modelo entrenado desde cero, con nuestros propios datos etiquetados. Eso tiene un valor enorme para entender qué ocurre por dentro, pero en un proyecto real rara vez hace falta llegar a ese extremo salvo que tu dominio sea muy específico (jerga técnica, tickets de soporte de tu empresa, comentarios sobre tu producto puntual). Para análisis de sentimiento genérico ya existen modelos preentrenados, listos para usar sin necesidad de armar tu propio dataset.
+ 
+En español, **pysentimiento** —desarrollado en la UBA— es una biblioteca pensada específicamente para español rioplatense y latinoamericano, con modelos ya entrenados para sentiment analysis, detección de emociones y hate speech. Probalo con un par de frases y compará cómo responde frente a tu propio modelo:
+ 
+```python
+# pip install pysentimiento
+ 
+from pysentimiento import create_analyzer
+ 
+analyzer = create_analyzer(task="sentiment", lang="es")
+ 
+print(analyzer.predict("Una pérdida de dinero, no lo recomiendo"))
+print(analyzer.predict("Llegó rápido y funciona perfecto"))
+```
+ 
+```text
+AnalyzerOutput(output=NEG, probas={NEG: 0.978, NEU: 0.017, POS: 0.005})
+AnalyzerOutput(output=POS, probas={POS: 0.965, NEU: 0.028, NEG: 0.007})
+```
+ 
+Notá que, a diferencia de `modelo.predict()`, acá no obtenés solo la etiqueta sino también la probabilidad asociada a cada clase —una ventaja de trabajar con un modelo ya afinado sobre millones de ejemplos. Si preferís algo multilingüe dentro del ecosistema de Hugging Face, `nlptown/bert-base-multilingual-uncased-sentiment` es otra opción sólida. Los vas a ir conociendo en profundidad más adelante en el curso; por ahora alcanza con saber que la opción existe, y que entrenar tu propio modelo es una herramienta más, no siempre el primer paso.
+ 
 Queda, sin embargo, una pregunta incómoda dando vueltas. Hicimos un único split de entrenamiento y prueba: ¿qué pasa si, por pura casualidad, el 20% que quedó como test resultó ser más fácil (o más difícil) de clasificar que el resto de los datos? ¿Cómo podríamos estar seguros de que el 0.85 de accuracy no es simplemente un golpe de suerte en la división? Esa pregunta nos va a llevar directamente a la próxima clase.
